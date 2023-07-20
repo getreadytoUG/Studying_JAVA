@@ -43,6 +43,11 @@ Method의 이름은 소문자로 쓰는것이 관행
 
 예시로 VendingMachine 클래스와 pushProductButton 메소드를 추가해 보자.
 
+예시에서 볼 수 있듯이 VendingMachineMain에서 vm1의 pushProductButton을 수행하기 위해서는 다른 class인 
+VendingMachine 을 참조해야하며 이때 "의존한다"
+
+
+
 
 
 
