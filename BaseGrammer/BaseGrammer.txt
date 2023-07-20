@@ -80,7 +80,7 @@ cond ? return1 : return2
 [ㅡ]
 
 break 와 continue 의 한계 : 가장 가까운 반복문을 빠져나가기 때문에 중첩 반복문에서의 활용에 제한
-=> Label
+=> Label ( : , 콜론 사용 )
 예시 코드 LabelExam1 에서 볼 수 있듯이
 outter; 가 labelling되어 중간에서 빠져나올 때 outter로 labelling 된 반복문을 빠져나올 수 있다.
 
