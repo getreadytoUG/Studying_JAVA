@@ -59,6 +59,8 @@ method의 경우 매개변수와 반환값을 모두 확인할 수 있다. ( ex)
 ex) VendingMachine.printVersion(); 이 오류없이 수행된다면 printVersion은 static Method라고 할 수 있다.
 보통 class명.method명(); 식으로 사용됨
 
+이때 reference variable.static method 도 수행은 되지만 바람직한 용법은 아님을 알아두자
+=> ( 프로그래머 간의 관례로 알아보기 쉽게 하기 위해 )
 
 
 
