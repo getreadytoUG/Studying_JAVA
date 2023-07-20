@@ -1,0 +1,106 @@
+객체지향 Java의 문법
+핵심은 Messaging
+
+class가 설계도면, Object ( = Instance) 가 실제로 생성되는 것, Reference variable 이 이를 명명하는 것
+실제로 동작하는 주체는 Object
+
+ex) class Book을 선언하고, Book b = new Book(); 을 수행하면 Reference type Book을 가지는 Reference varibale b가
+생성되는데 Book(); 을 통한다 => 생성자
+
+[ㅡ]
+
+class의 선언방식 : [접근제한자] class [class 이름] {
+	field;
+	생성자;
+	method;
+}
+
+접근제한자 : public, protected, (생략), private 등
+class 이름 : 첫 글자는 대문자를 사용하는게 관례, 두 단어를 합칠 때 단어의 첫글자만을 대문자로 표기(카멜 표기법)
+
+이때 static이 붙은 method는 Instance를 이용하지 않고도 사용이 가능하다 ( ex) public static void main )
+즉 이미 메모리에 상주하고 있다는 뜻
+
+다른 class를 참조할 때 "의존한다"라고 표현
+
+[ㅡ]
+
+Instance를 만드는 방법 3가지
+1. new 연산자와 생성자를 이용
+2. 클래스 로더를 이용
+3. 메모리에 있는 Instance를 복제(clone) (fork 얘기하는 듯)
+
+[ㅡ]
+
+Method 선언방식 : (접근제한자) (static) ReturnType Method 이름([매개변수, ...]){
+	실행문
+	...
+}
+
+이때 접근제한자, static, 매개변수 등은 생략이 가능하다.
+
+Method의 이름은 소문자로 쓰는것이 관행 
+
+예시로 VendingMachine 클래스와 pushProductButton 메소드를 추가해 보자.
+
+예시에서 볼 수 있듯이 VendingMachineMain에서 vm1의 pushProductButton을 수행하기 위해서는 다른 class인 
+VendingMachine 을 참조해야하며 이때 "의존한다"
+
+[ㅡ]
+
+Method 안의 지역변수의 초기화를 수행치 않으면 오류가 발생
+class 안의 변수(field)는 초기화를 수행치 않으면 default로 설정
+
+method의 경우 매개변수와 반환값을 모두 확인할 수 있다. ( ex) void, int, String ... )
+
+[ㅡ]
+
+앞서 말했듯이 static한 method는 Instance를 생성치 않고도 사용이 가능하다.
+ex) VendingMachine.printVersion(); 이 오류없이 수행된다면 printVersion은 static Method라고 할 수 있다.
+보통 class명.method명(); 식으로 사용됨
+
+이때 reference variable.static method 도 수행은 되지만 바람직한 용법은 아님을 알아두자
+=> ( 프로그래머 간의 관례로 알아보기 쉽게 하기 위해 )
+
+[ㅡ]
+
+Java VM 은 Class를 CLASSPATH에서 찾는다. 
+method 의 지역변수는 그 method가 종료될 때 삭제된다. 또한 각자의 영역에서 생성되기 때문에 ( thread 개념 ) 
+동시 호출되어도 문제가 발생하지 않는다.
+
+[ㅡ]
+
+Java 가 제공하는 class중 하나인 "Math" class를 사용해보자.
+Math의 모든 method는 static 이라 인스턴스 생성 X 
+=> 따라서 Math m = new Math(); 를 수행시 에러가 난다.
+MathTest라는 class로 실행해보자.
+
+기본 생성자는 프로그래머가 생성자를 하나도 만들지 않을 경우 자동적으로 생성된다.
+기본 생성자 : public class이름(){
+	
+}
+
+이때 많이 사용되는 method를 static 으로 설정해 놨지만 계속해서 인스턴스를 만들게 되면 메모리의 낭비가 심해진다.
+=> 강제로 인스턴스 생성을 제한할 수 있는데 이게 "private(접근제한자)" 사용
+
+즉 public -> 누구나 접근가능, private -> 인스턴스 생성 불가
+
+private 을 설정하면 해당 class에 접근하지 못하므로 인스턴스를 생성하지 못함. 따라서 강제로 static method만을 
+사용하게 된다.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
