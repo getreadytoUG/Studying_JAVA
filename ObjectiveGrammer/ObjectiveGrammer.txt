@@ -1,0 +1,65 @@
+객체지향 Java의 문법
+핵심은 Messaging
+
+class가 설계도면, Object ( = Instance) 가 실제로 생성되는 것, Reference variable 이 이를 명명하는 것
+실제로 동작하는 주체는 Object
+
+ex) class Book을 선언하고, Book b = new Book(); 을 수행하면 Reference type Book을 가지는 Reference varibale b가
+생성되는데 Book(); 을 통한다 => 생성자
+
+[ㅡ]
+
+class의 선언방식 : [접근제한자] class [class 이름] {
+	field;
+	생성자;
+	method;
+}
+
+접근제한자 : public, protected, (생략), private 등
+class 이름 : 첫 글자는 대문자를 사용하는게 관례, 두 단어를 합칠 때 단어의 첫글자만을 대문자로 표기(카멜 표기법)
+
+이때 static이 붙은 method는 Instance를 이용하지 않고도 사용이 가능하다 ( ex) public static void main )
+즉 이미 메모리에 상주하고 있다는 뜻
+
+다른 class를 참조할 때 "의존한다"라고 표현
+
+[ㅡ]
+
+Instance를 만드는 방법 3가지
+1. new 연산자와 생성자를 이용
+2. 클래스 로더를 이용
+3. 메모리에 있는 Instance를 복제(clone) (fork 얘기하는 듯)
+
+[ㅡ]
+
+Method 선언방식 : (접근제한자) (static) ReturnType Method 이름([매개변수, ...]){
+	실행문
+	...
+}
+
+이때 접근제한자, static, 매개변수 등은 생략이 가능하다.
+
+Method의 이름은 소문자로 쓰는것이 관행 
+
+예시로 VendingMachine 클래스와 pushProductButton 메소드를 추가해 보자.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
