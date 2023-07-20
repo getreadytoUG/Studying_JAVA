@@ -62,6 +62,20 @@ ex) VendingMachine.printVersion(); 이 오류없이 수행된다면 printVersion
 이때 reference variable.static method 도 수행은 되지만 바람직한 용법은 아님을 알아두자
 => ( 프로그래머 간의 관례로 알아보기 쉽게 하기 위해 )
 
+[ㅡ]
+
+Java VM 은 Class를 CLASSPATH에서 찾는다. 
+method 의 지역변수는 그 method가 종료될 때 삭제된다. 또한 각자의 영역에서 생성되기 때문에 ( thread 개념 ) 
+동시 호출되어도 문제가 발생하지 않는다.
+
+[ㅡ]
+
+Java 가 제공하는 class중 하나인 "Math" class를 사용해보자.
+Math의 모든 method는 static 이라 인스턴스 생성 X 
+=> 따라서 Math m = new Math(); 를 수행시 에러가 난다.
+MathTest라는 class로 실행해보자.
+
+
 
 
 
