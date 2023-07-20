@@ -1,0 +1,87 @@
+Java에서 사용하는 변수
+
+[ 기본형 type ] 
+1. byte ( 정수, 0byte )
+2. int ( 정수, 4byte )
+3. short ( 정수, 2byte )
+4. long ( 정수, 8byte )
+5. float ( 실수 )
+6. double ( 실수 )
+7. char ( 문자 1개 )
+8. boolean ( 참/거짓 )
+=> 기본형 변수들은 값을 가지고, 기본적으로 첫 글자가 소문자로 시작한다.
+
+[ㅡ]
+
+[ 참조형 type ]
+기본형이 아닌 type으로 대문자를 가지는데
+"Book b = new Book();" 
+식으로 사용되며 Book 이 참조형 type
+
+[ㅡ]
+
+선언 시 C언어와 마찬가지로 선언한다.
+ex) int i = 7;
+그 외의 기본 문법 ( if, while , for 등) 도 이와 동일한 것 같다.
+
+[ㅡ]
+
+method 
+println 과 print : System.out 에는 println 과 print가 모두 존재하는데 이 차이는 말미의 \n의 차이인듯 하다
+
+[ㅡ]
+
+논리형 type 의 경우 초기화 하지 않으면 기본적으로 "false" 값을 가진다.
+비교 연산자 : ==, !=, <, >, <=, >=
+논리 연산자 : &&, ||, &, |, ^, !
+
+논리연산자에서 &&와 &의 차이 및 ||와 |의 차이는 앞 조건에서 이미 결과가 나왔음에도 뒤 조건을 연산하는지의 차이를 둔다.
+한개 짜리가 뒤의 조건까지 수행 => 앞 조건 수행 후 조건 자체의 변화가 있을 때 수행
+^ 는 XOR(배타적 논리합, Exclusiv OR)
+
+[ㅡ]
+
+정수 type 에서의 리터럴값 구분
+ex) 리터럴 5 = int 5, 리터럴 5L = long 5 => int x = 5;, long y = 5L;
+이때 최대, 최소는 byte(8자리)로 계산이 가능( two's complement 로 표현)
+
+산술 연산자 : +, -, *, /, %
+이때 int끼리의 / 는 몫만 나온다
+
+각 type의 class에는 MAX_VALUE 와 MIN_VALUE라는 method가 있다.
+ex) int maxInt = Integer.MAX_VALUE;
+ex) double minDouble = Double.MIN_VALUE;
+
+증감연산자 사용 가능 ( ++, -- )
+산술대입연산자 사용 가능 ( +=, -=, /=, *=, %=)
+
+형 변환도 가능하되 주의점 항상 유념하길
+
+char 도 C언어 에서와의 취급과 똑같다. (ASCII 코드 사용)
+
+[ㅡ]
+
+비트 연산자 : &, |, ^, ~, <<, >>, >>>
+& : ANd 
+| : OR
+^ : XOR
+~ : NOT
+<< : Shift Left
+>> : Shift Right
+>>> : Shift Right In Positive ( 우측 양수화 쉬프트 ) 
+이때 모든 비트 연산자는 각 수의 bit string에 대한 연산
+
+[ㅡ]
+
+삼항연산자 
+cond ? return1 : return2 
+=> cond가 참이면 return1, 거짓이면 return2 반환
+
+[ㅡ]
+
+break 와 continue 의 한계 : 가장 가까운 반복문을 빠져나가기 때문에 중첩 반복문에서의 활용에 제한
+=> Label ( : , 콜론 사용 )
+예시 코드 LabelExam1 에서 볼 수 있듯이
+outter; 가 labelling되어 중간에서 빠져나올 때 outter로 labelling 된 반복문을 빠져나올 수 있다.
+
+
